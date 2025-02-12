@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Tagger AI</title>
+</head>
+<body>
+    <h1>Vision Tagger AI</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <label for="image">Upload an Image:</label>
+        <input type="file" name="image" id="image" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if tags %}
+        <h2>Detected Tags:</h2>
+        <ul>
+            {% for tag in tags %}
+                <li>{{ tag }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
